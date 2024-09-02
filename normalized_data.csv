@@ -1,0 +1,2 @@
+SourceIP,DestinationIP,SourcePort,Protocol,BytesSent,BytesReceived,PacketsSent,PacketsReceived,Duration
+0.000127001,5.6924e-05,0.0012207217517357137,0.6,0.1024,0.2048,1.0,1.5,0.0

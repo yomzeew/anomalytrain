@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Traffic Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .prediction {
+            margin-top: 30px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Network Traffic Analysis</h1>
+    
+    <h2>Extracted Data</h2>
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Source IP</td>
+            <td>{{ ip_source }}</td>
+        </tr>
+        <tr>
+            <td>Destination IP</td>
+            <td>{{ ip_destination }}</td>
+        </tr>
+        <tr>
+            <td>Source Port</td>
+            <td>{{ port_source }}</td>
+        </tr>
+        <tr>
+            <td>Packets Sent</td>
+            <td>{{ packets_sent }}</td>
+        </tr>
+        <tr>
+            <td>Packets Received</td>
+            <td>{{ packets_received }}</td>
+        </tr>
+        <tr>
+            <td>Bytes Sent</td>
+            <td>{{ bytes_sent }}</td>
+        </tr>
+        <tr>
+            <td>Duration</td>
+            <td>{{ duration }}</td>
+        </tr>
+    </table>
+
+    <h2>Normalized Data</h2>
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Normalized Value</th>
+        </tr>
+        {% for key, value in normalized_data_row.items() %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="prediction">
+        <h2>Prediction Result</h2>
+        <p>The network traffic is classified as: <strong>{{ prediction_result }}</strong></p>
+        <p>Prediction Confidence: {{ prediction[0][0] }}</p>
+    </div>
+</body>
+</html>

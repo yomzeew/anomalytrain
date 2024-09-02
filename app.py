@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, flash
 import time
 import numpy as np
 import tensorflow as tf
+from sklearn.preprocessing import MinMaxScaler
 from flask_mail import Mail, Message  # Import Mail and Message
 from email_utils import send_email
 from dotenv import load_dotenv
